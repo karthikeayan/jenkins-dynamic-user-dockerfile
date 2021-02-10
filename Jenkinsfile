@@ -10,11 +10,11 @@ pipeline {
     agent {
         dockerfile {
             filename 'Dockerfile.build'
-            additionalBuildArgs '''\
-            --build-arg GID=$JENKINS_GROUP_ID \
-            --build-arg UID=$JENKINS_USER_ID \
-            --build-arg UNAME=$JENKINS_USER_NAME \
-            '''
+            additionalBuildArgs """\
+            --build-arg GID=${env.JENKINS_GROUP_ID} \
+            --build-arg UID=${env.JENKINS_USER_ID} \
+            --build-arg UNAME=${env.JENKINS_USER_NAME} \
+            """
         }
     }
 
